@@ -1,8 +1,7 @@
 #!/bin/bash
 clear
-
-opcion=0
 mostrarOpciones
+opcion=0
 
 while ((opcion!=99))
 do
@@ -32,32 +31,30 @@ do
     esac
 done
 function crearFichero () {
-        mkdir directorio1
-        cd directorio1
-        echo "Creado archivo de prueba" > archivo1.txt
-        cat archivo1.txt
-
-
+    mkdir directorio1
+    cd directorio1
+    echo "Creado archivo de prueba" > archivo1.txt
+    cat archivo1.txt
 }
 
 function eliminarFichero () {
-        cd ..
-        echo "Eliminando directorio1 y todo lo que contiene"
-        for((i=5; i>=0; i--))
-        do
-             echo $i
-            sleep 1
-        done
-        rm -rf directorio1
+    cd ..
+    echo "Eliminando directorio1 y todo lo que contiene"
+    for((i=5; i>=0; i--))
+    do
+        echo $i
+        sleep 1
+    done
+    rm -rf directorio1
 }
 
 
 function listarContenido () {
-        cd ~
-        ls -la
+    cd ~
+    ls -la
 }
 
-function mostrarOpciones(){
+function mostrarOpciones () {
     echo "1. Crear un directorio y un archivo de texto dentro del mismo."
     echo "2. Mostrar el contenido del archivo de texto."
     echo "3. Listar el contenido del directorio principal del usuario"
