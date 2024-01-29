@@ -1,35 +1,5 @@
 #!/bin/bash
 clear
-opcion=0
-mostrarOpciones
-
-while ((opcion!=99))
-do
-    echo "Introduce la opción deseada. [1-5]"
-    read opcion
-
-    case $opcion in
-        1)
-        crearFichero
-        ;;
-        2)
-        eliminarFichero
-        ;;
-        3)
-        listarContenido
-        ;;
-        4)
-        date
-        ;;
-        5)
-        xdg-open "https://t.ly/nw-Kg" >/dev/null 2>&1
-        sleep 5
-        ;;
-        99)
-        echo "Hasta luego!"
-        ;;
-    esac
-done
 
 function crearFichero () {
         mkdir directorio1
@@ -65,3 +35,34 @@ function mostrarOpciones(){
     echo "5. Abrir el navegador para comprar una placa base."
     echo "99. Salir"
 }
+
+opcion=0
+mostrarOpciones
+
+while ((opcion!=99))
+do
+    echo "Introduce la opción deseada. [1-5]"
+    read opcion
+
+    case $opcion
+        1)
+        crearFichero
+        ;;
+        2)
+        eliminarFichero
+        ;;
+        3)
+        listarContenido
+        ;;
+        4)
+        date
+        ;;
+        5)
+        xdg-open "https://t.ly/nw-Kg" >/dev/null 2>&1
+        sleep 5
+        ;;
+        99)
+        echo "Hasta luego!"
+        ;;
+    esac
+done
