@@ -1,11 +1,13 @@
 #!/bin/bash
 clear
-echo "Introduce la opción deseada. [1-5]"
-read -p "Pulsa 99 para salir" opcion
+opcion=0
+mostrarOpciones
 
-salir = false
-while ((salir == false))
+while ((opcion!=99))
 do
+    echo "Introduce la opción deseada. [1-5]"
+    read opcion
+
     case $opcion in
         1)
         crearFichero
@@ -24,7 +26,7 @@ do
         sleep 5
         ;;
         99)
-        salir = true
+        echo "Hasta luego!"
         ;;
     esac
 done
